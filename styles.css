@@ -83,7 +83,7 @@ h2 {
     }
 
     nav {
-        flex-direction: column; /* Stack nav links vertically */
+        flex-direction: row; /* Stack nav links vertically */
         gap: 10px;
     }
 
