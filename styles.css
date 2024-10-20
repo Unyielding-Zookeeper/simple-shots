@@ -1,56 +1,68 @@
 body {
-    background-color: #1A202C; /* Set the background color similar to the example */
-    color: #ffffff; /* Set text color to white */
+    background-color: #1A202C;
+    color: #ffffff;
     font-family: sans-serif;
     margin: 10px;
 }
+
 .header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-.header, 
-a {
     gap: 6px;
-    text-decoration: none;
 }
-nav  {
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation Styles */
+nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
 }
-nav a {
-    color: white;
-}
-.container {
- display: flex; 
- margin-top: 40px;
- justify-content: space-evenly;
- margin-bottom: 50px;
 
+.container {
+    display: flex; 
+    margin-top: 40px;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Ensures elements wrap on smaller screens */
 }
+
+/* Image Styles */
 img {
     border-radius: 2%;
+    max-width: 100%; /* Ensures the image scales down on smaller screens */
+    height: auto; /* Maintains aspect ratio */
 }
+
+/* Text Styles */
 h2 {
     text-align: center;
 }
+
 .images {
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    background-color: lightgray
+    background-color: lightgray;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 20px;
+    flex-wrap: wrap; /* Ensures images stack on smaller screens */
 }
+
 .info {
     max-width: 200px;
     color: #ffffff;
     font-weight: 200;
 }
+
 .quote {
     padding: 20px;
     color: #ffffff;
@@ -62,33 +74,36 @@ h2 {
 .text {
     display: flex;
     flex-basis: 80%;
+    flex-direction: column;
 }
 
-
-@media (max-width: 600px) {
+/* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        text-align: center;
+        justify-content: center; /* Center the header links on smaller screens */
     }
 
     nav {
-        margin-left: 0;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column; /* Stack nav links vertically */
         gap: 10px;
     }
 
     .container {
         flex-direction: column;
-        text-align: center;
+        align-items: center; /* Center content for smaller screens */
     }
 
     .images {
-        flex-direction: column;
+        flex-direction: column; /* Stack images vertically on mobile */
+        gap: 10px;
     }
 
-    img {
-        width: 100%;
-        height: auto;
+    .info {
+        max-width: 100%; /* Allow text blocks to expand fully */
+        text-align: center; /* Center the text */
+    }
+
+    .quote {
+        font-size: 18px; /* Reduce quote size for better readability on mobile */
     }
 }
